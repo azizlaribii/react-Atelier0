@@ -1,4 +1,5 @@
-import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { useState } from 'react';
 import LifecycleDemo from './LifecycleDemo';
 import UpdatingDemo from './LifeCycleUpdate';
 import Counter from './components/Counter';
@@ -8,12 +9,24 @@ import ListManager from './components/ListManager';
 import Events from './components/Events';
 
 function App() {
+    const [showEvents, setShowEvents] = useState(false);
+
     return (
         <div style={{ padding: '25px', maxWidth: '1200px', margin: '0 auto' }}>
             <h1 style={{ textAlign: 'center', marginBottom: '30px' }}>React Components Workshop</h1>
 
-            {/* Events Component */}
-            <Events />
+            {/* Button to toggle Events */}
+            <div style={{ textAlign: 'center', marginBottom: '30px' }}>
+                <button
+                    className="btn btn-primary btn-lg"
+                    onClick={() => setShowEvents(!showEvents)}
+                >
+                    {showEvents ? 'Hide Events' : 'Show Events'}
+                </button>
+            </div>
+
+            {/* Events Component - Conditionally Rendered */}
+            {showEvents && <Events />}
 
             {/* Lifecycle Components */}
             <LifecycleDemo />
