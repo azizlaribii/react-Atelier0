@@ -5,11 +5,15 @@ import Counter from './components/Counter';
 import ColorBox from './components/ColorBox';
 import GradeManager from './components/GradeManager';
 import ListManager from './components/ListManager';
+import Events from './components/Events';
 
 function App() {
     return (
-        <div style={{ padding: '20px', maxWidth: '1200px', margin: '0 auto' }}>
+        <div style={{ padding: '25px', maxWidth: '1200px', margin: '0 auto' }}>
             <h1 style={{ textAlign: 'center', marginBottom: '30px' }}>React Components Workshop</h1>
+
+            {/* Events Component */}
+            <Events />
 
             {/* Lifecycle Components */}
             <LifecycleDemo />
