@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function Event({ event, onBook, onToggleLike, index }) {
     const { name, description, img, price, nbTickets, nbParticipants, like } = event;
@@ -81,7 +82,9 @@ function Event({ event, onBook, onToggleLike, index }) {
                     fontWeight: 'bold',
                     color: '#333'
                 }}>
-                    {name}
+                    <Link to={`/events/${name}`} style={{ textDecoration: 'none', color: '#333' }}>
+                        {name}
+                    </Link>
                 </h3>
 
                 <p style={{
